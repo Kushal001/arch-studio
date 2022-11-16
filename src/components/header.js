@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import { Container, Flex } from "../styles/globalStyles"
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 
-const Header = () => {
+const Header = ({ onCursor }) => {
   return (
     <HeaderNav
       animate={{ y: 0, opacity: 1 }}
@@ -23,7 +23,10 @@ const Header = () => {
 
           <p>architecture & interior design studio</p>
 
-          <Menu>
+          <Menu
+            onMouseEnter={() => onCursor("hovered")}
+            onMouseLeave={onCursor}
+          >
             <button>
               <span></span>
               <span></span>

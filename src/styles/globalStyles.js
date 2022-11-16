@@ -45,9 +45,18 @@ export const Cursor = styled(motion.div)`
   transform: translate(-50%, -50%);
   pointer-events: none;
 
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   z-index: 999;
+
+  &.hovered {
+    width: 43px;
+    height: 43px;
+    background: transparent !important;
+    border: 3px solid ${(props) => props.theme.colorPrimary};
+  }
 `

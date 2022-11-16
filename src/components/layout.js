@@ -4,6 +4,12 @@ import React from "react"
 import Header from "./header"
 import Cursor from "./customCursor"
 
+// Context
+import {
+  useGlobalDispatchContext,
+  useGlobalStateContext,
+} from "../context/globalContext"
+
 // Assets
 import semiBold from "../assets/fonts/Gilroy-SemiBold.woff"
 import medium from "../assets/fonts/Gilroy-Medium.woff"
@@ -47,6 +53,9 @@ body {
 `
 
 const Layout = ({ children }) => {
+  const { cursorStyles } = useGlobalStateContext()
+  const dispatch = useGlobalDispatchContext()
+
   const theme = {
     textWhite: "#fff",
     lightGray3: "#C8C7CC",
@@ -54,11 +63,17 @@ const Layout = ({ children }) => {
     colorPrimary: "#FBE7CC",
   }
 
+  const onCursor = (cursorType, cursorText = "") => {
+    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
+
+    dispatch({ type: "CURSOR_TYPE", cursorType, cursorText })
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Cursor />
-      <Header />
+      <Header onCursor={onCursor} />
       <main>{children}</main>
     </ThemeProvider>
   )

@@ -3,12 +3,16 @@ import React, { useState, useEffect, useRef } from "react"
 // Styled component
 import { Cursor } from "../styles/globalStyles"
 
+// Context
+import { useGlobalStateContext } from "../context/globalContext"
+
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
   })
   const cursorRef = useRef()
+  const { cursorType, cursorText } = useGlobalStateContext()
 
   const onMouseMove = (event) => {
     const { pageX: x, pageY: y } = event
@@ -26,6 +30,7 @@ const CustomCursor = () => {
   return (
     <>
       <Cursor
+        className={!!cursorType ? cursorType : ""}
         ref={cursorRef}
         animate={{
           left: mousePosition.x,
@@ -35,7 +40,9 @@ const CustomCursor = () => {
             ease: "linear",
           },
         }}
-      ></Cursor>
+      >
+        {!!cursorText ? cursorText : ""}
+      </Cursor>
     </>
   )
 }

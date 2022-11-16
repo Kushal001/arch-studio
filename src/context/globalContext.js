@@ -21,7 +21,7 @@ const globalReducer = (state, action) => {
   }
 }
 
-const GlobalProvider = ({ children }) => {
+export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalReducer, {
     cursorType: false,
     cursorStyles: ["pointer", "hovered", "expanded"],

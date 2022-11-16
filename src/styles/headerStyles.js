@@ -34,6 +34,7 @@ export const Menu = styled.div`
     border: none;
     outline: none;
     display: block;
+    cursor: pointer;
 
     span {
       text-align: center;
