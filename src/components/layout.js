@@ -2,6 +2,7 @@ import React from "react"
 
 // Components
 import Header from "./header"
+import Cursor from "./customCursor"
 
 // Assets
 import semiBold from "../assets/fonts/Gilroy-SemiBold.woff"
@@ -43,18 +44,20 @@ body {
   overscroll-behavior: none;
   overflow-x: hidden;
 }
-
-
 `
 
 const Layout = ({ children }) => {
   const theme = {
-    textWhite: "#000",
+    textWhite: "#fff",
+    lightGray3: "#C8C7CC",
+    gray5: "#E6E5EA",
+    colorPrimary: "#FBE7CC",
   }
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Cursor />
       <Header />
       <main>{children}</main>
     </ThemeProvider>

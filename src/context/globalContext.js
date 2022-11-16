@@ -1,0 +1,42 @@
+import React, { createContext, useReducer, useContext } from "react"
+
+// Define the context
+const GlobalStateContext = createContext()
+const GlobalDispatchContext = createContext()
+
+// Reducer
+const globalReducer = (state, action) => {
+  switch (action.type) {
+    case "CURSOR_TYPE": {
+      return {
+        ...state,
+        cursorType: action.cursorType,
+        cursorText: action.cursorText,
+      }
+    }
+
+    default: {
+      throw new Error(`Unhandled action type: ${action.type}`)
+    }
+  }
+}
+
+const GlobalProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(globalReducer, {
+    cursorType: false,
+    cursorStyles: ["pointer", "hovered", "expanded"],
+    cursorText: "",
+  })
+
+  return (
+    <GlobalDispatchContext.Provider value={dispatch}>
+      <GlobalStateContext.Provider value={state}>
+        {children}
+      </GlobalStateContext.Provider>
+    </GlobalDispatchContext.Provider>
+  )
+}
+
+// Custom hooks to use dispatch and state
+export const useGlobalStateContext = () => useContext(GlobalStateContext)
+export const useGlobalDispatchContext = () => useContext(GlobalDispatchContext)

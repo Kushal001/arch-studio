@@ -1,19 +1,21 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
-export const HeaderNav = styled.div`
+export const HeaderNav = styled(motion.div)`
   font-family: "medium";
   font-size: 1.6rem;
 
   height: 0;
   width: 100%;
   position: absolute;
-  top: 32px;
+  top: 16px;
   left: 0;
   right: 0;
   z-index: 99;
 
   p {
     text-transform: capitalize;
+    color: ${(props) => props.theme.textWhite};
   }
 `
 
