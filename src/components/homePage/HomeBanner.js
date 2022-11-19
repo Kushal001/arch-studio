@@ -36,7 +36,7 @@ const HomeBanner = () => {
           loop
           autoPlay
           muted
-          src={require("../../assets/video/apartment.mp4").default}
+          src={require("../../assets/video/banner-video.mp4").default}
         ></video>
       </Video>
       <BannerTitle>

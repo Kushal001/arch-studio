@@ -1,5 +1,6 @@
-import React, { useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import React, { useEffect, useState } from "react"
+import { useAnimation, motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 // Styled components
 import { Container, Flex } from "../../styles/globalStyles"
@@ -40,8 +41,39 @@ const SERVICES = [
 ]
 
 const HomeServices = () => {
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-200px",
+  })
+  const animation = useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible")
+    }
+  }, [inView, animation])
+
   return (
-    <HomeServicesSection>
+    <HomeServicesSection
+      ref={contentRef}
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.6,
+            ease: [0.6, 0.05, -0.01, 0.9],
+          },
+        },
+
+        hidden: {
+          opacity: 0,
+          y: 72,
+        },
+      }}
+      initial="hidden"
+      animate={animation}
+    >
       <Container>
         <h4>Services</h4>
 
@@ -62,7 +94,6 @@ const Services = ({ service }) => {
 
   return (
     <>
-      {console.log(service.video)}
       <Service
         onMouseEnter={() => setShowVideo(true)}
         onMouseLeave={() => setShowVideo(false)}

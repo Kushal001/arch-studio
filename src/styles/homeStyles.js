@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { motion } from "framer-motion"
 
 export const Banner = styled.div`
@@ -42,7 +42,7 @@ export const About = styled.h4`
 `
 
 // Services section
-export const HomeServicesSection = styled.div`
+export const HomeServicesSection = styled(motion.div)`
   margin-bottom: 200px;
 
   h4 {
@@ -120,4 +120,72 @@ export const ServiceCaption = styled(motion.div)`
   font-size: 1.8rem;
   line-height: 151.5%;
   text-transform: capitalize;
+`
+
+// Featured section
+export const HomeFeaturedSection = styled(motion.div)`
+  /* The animation in header does not work if height property is used.  */
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 200px;
+`
+
+export const FeaturedVideo = styled.div`
+  width: 100%;
+  height: 100%;
+
+  video {
+    object-fit: cover;
+  }
+`
+export const FeaturedContent = styled.div`
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  padding: 40px 0;
+
+  h2 {
+    font-size: 9rem;
+  }
+
+  caption {
+    font-size: 1.6rem;
+  }
+
+  p {
+    width: 700px;
+    line-height: 152.8%;
+    font-size: 1.6rem;
+  }
+`
+
+// Contact
+export const HomeContactSection = styled.div`
+  margin-top: 300px;
+  margin-bottom: 300px;
+
+  cursor: pointer;
+  &:hover {
+    color: ${(props) => props.theme.colorPrimary};
+  }
+`
+
+export const Contact = styled.h2`
+  width: fit-content;
+  margin-left: 120px;
+  font-size: 9.6rem;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+
+  span {
+    margin-top: 8px;
+    height: 8px;
+    display: block;
+  }
 `

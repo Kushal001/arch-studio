@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
 import { motion } from "framer-motion"
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   flex-grow: 1;
   margin: 0 auto;
   position: relative;
@@ -21,6 +21,12 @@ export const Flex = styled.div`
     `}
 
   ${(props) =>
+    props.center &&
+    css`
+      justify-content: center;
+    `}
+
+  ${(props) =>
     props.maxHeight &&
     css`
       height: 100%;
@@ -30,6 +36,12 @@ export const Flex = styled.div`
     props.reverseContent &&
     css`
       flex-direction: row-reverse;
+    `}
+
+    ${(props) =>
+    props.column &&
+    css`
+      flex-direction: column;
     `}
 `
 
@@ -58,5 +70,15 @@ export const Cursor = styled(motion.div)`
     height: 43px;
     background: transparent !important;
     border: 3px solid ${(props) => props.theme.colorPrimary};
+  }
+
+  &.expanded {
+    width: 120px;
+    height: 120px;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
