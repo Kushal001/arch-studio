@@ -57,7 +57,7 @@ export const Cursor = styled(motion.div)`
   transform: translate(-50%, -50%);
   pointer-events: none;
 
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition: width 0.2s ease, height 0.2s ease;
 
   display: flex;
   align-items: center;

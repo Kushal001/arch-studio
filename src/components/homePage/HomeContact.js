@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 // Styled components
@@ -25,7 +25,6 @@ const HomeContact = ({ onCursor }) => {
           <motion.span
             animate={{
               width: hovered ? "100%" : 0,
-              background: hovered ? "#FBE7CC" : "#000",
               transition: {
                 duration: 0.6,
                 ease: [0.6, 0.05, -0.01, 0.9],

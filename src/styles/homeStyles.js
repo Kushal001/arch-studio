@@ -166,14 +166,11 @@ export const FeaturedContent = styled.div`
 `
 
 // Contact
-export const HomeContactSection = styled.div`
+export const HomeContactSection = styled(motion.div)`
   margin-top: 300px;
   margin-bottom: 300px;
 
   cursor: pointer;
-  &:hover {
-    color: ${(props) => props.theme.colorPrimary};
-  }
 `
 
 export const Contact = styled.h2`
@@ -187,5 +184,6 @@ export const Contact = styled.h2`
     margin-top: 8px;
     height: 8px;
     display: block;
+    background-color: #000;
   }
 `

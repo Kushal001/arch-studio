@@ -3,6 +3,7 @@ import React from "react"
 // Components
 import Header from "./header"
 import Cursor from "./customCursor"
+import Footer from "./footer"
 
 // Context
 import {
@@ -75,6 +76,7 @@ const Layout = ({ children }) => {
       <Cursor />
       <Header onCursor={onCursor} />
       <main>{children}</main>
+      <Footer onCursor={onCursor} />
     </ThemeProvider>
   )
 }
