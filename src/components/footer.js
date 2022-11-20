@@ -27,9 +27,9 @@ const SOCIAL_LINKS = [
   },
 ]
 
-const Footer = ({ onCursor }) => {
+const Footer = ({ onCursor, noMarginTop }) => {
   return (
-    <FooterSection>
+    <FooterSection noMarginTop={noMarginTop}>
       <Container>
         <Flex spaceBetween>
           <p>© 2022, All rights reserved</p>

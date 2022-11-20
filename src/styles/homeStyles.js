@@ -147,7 +147,7 @@ export const FeaturedContent = styled.div`
   transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
-  color: #fff;
+  color: ${(props) => props.theme.textWhite};
   padding: 40px 0;
 
   h2 {

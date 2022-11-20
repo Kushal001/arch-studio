@@ -1,9 +1,15 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const FooterSection = styled.div`
   font-size: 1.6rem;
   margin-top: 200px;
   margin-bottom: 16px;
+
+  ${(props) =>
+    props.noMarginTop &&
+    css`
+      margin-top: 0;
+    `}
 `
 
 export const Socials = styled.div``
@@ -13,7 +19,7 @@ export const SocialLink = styled.a`
   text-transform: capitalize;
 
   transition: all 0.2s ease-in-out;
-  color: #000;
+  color: ${(props) => props.theme.textDark};
 
   &:not(:last-child) {
     margin-right: 64px;
@@ -22,7 +28,7 @@ export const SocialLink = styled.a`
   &:link,
   &:visited,
   &:active {
-    color: #000;
+    color: ${(props) => props.theme.textDark};
   }
 
   &:hover {

@@ -4,6 +4,7 @@ import React from "react"
 import Header from "./header"
 import Cursor from "./customCursor"
 import Footer from "./footer"
+import Navigation from "./navigation"
 
 // Context
 import {
@@ -62,6 +63,7 @@ const Layout = ({ children }) => {
     lightGray3: "#C8C7CC",
     gray5: "#E6E5EA",
     colorPrimary: "#FBE7CC",
+    textDark: "#000",
   }
 
   const onCursor = (cursorType, cursorText = "") => {
@@ -75,6 +77,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Cursor />
       <Header onCursor={onCursor} />
+      <Navigation onCursor={onCursor} />
       <main>{children}</main>
       <Footer onCursor={onCursor} />
     </ThemeProvider>
