@@ -101,7 +101,7 @@ const Services = ({ service }) => {
         <ServiceHeader>
           <motion.div
             animate={{
-              y: showVideo ? -120 : 0,
+              y: showVideo ? "-100%" : 0,
               transition: {
                 duration: 0.3,
                 ease: "easeInOut",

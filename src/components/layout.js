@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 // Components
 import Header from "./header"
@@ -58,6 +58,8 @@ const Layout = ({ children }) => {
   const { cursorStyles } = useGlobalStateContext()
   const dispatch = useGlobalDispatchContext()
 
+  const [toggleMenu, setToggleMenu] = useState(false)
+
   const theme = {
     textWhite: "#fff",
     lightGray3: "#C8C7CC",
@@ -76,8 +78,12 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Cursor />
-      <Header onCursor={onCursor} />
-      <Navigation onCursor={onCursor} />
+      <Header onCursor={onCursor} setToggleMenu={setToggleMenu} />
+      <Navigation
+        onCursor={onCursor}
+        toggleMenu={toggleMenu}
+        setToggleMenu={setToggleMenu}
+      />
       <main>{children}</main>
       <Footer onCursor={onCursor} />
     </ThemeProvider>

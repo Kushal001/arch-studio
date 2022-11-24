@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
-export const Nav = styled.div`
+export const Nav = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +24,7 @@ export const NavList = styled.div`
   width: 100%;
   ul {
     padding: 0;
-    z-index: 101;
+    z-index: 102;
     margin: 0;
     margin-top: -40px;
     pointer-events: none;
@@ -38,12 +39,20 @@ export const NavList = styled.div`
 
       a {
         color: #000;
+
+        transition: color 0.2s ease-in-out;
+        will-change: color;
+      }
+
+      a:hover {
+        color: ${(props) => props.theme.colorPrimary};
       }
     }
   }
 `
 
 export const NavFooter = styled.div`
+  z-index: 102;
   position: absolute;
   left: 0;
   bottom: 8px;
@@ -57,4 +66,8 @@ export const NavBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+
+  video {
+    object-fit: cover;
+  }
 `
