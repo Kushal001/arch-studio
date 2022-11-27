@@ -37,6 +37,18 @@ export const NavList = styled.div`
       text-transform: capitalize;
       line-height: 141.8%;
 
+      @media only screen and (max-width: 768px) {
+        font-size: 9rem;
+      }
+
+      @media only screen and (max-width: 576px) {
+        font-size: 5rem;
+      }
+
+      @media only screen and (max-width: 480px) {
+        font-size: 6.4rem;
+      }
+
       a {
         color: #000;
 

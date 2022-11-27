@@ -47,13 +47,17 @@ export const BannerTitle = styled(motion.h1)`
 export const Headline = styled(motion.div)`
   font-size: 20rem;
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1400px) {
+    font-size: 15rem;
+  }
+
+  /* @media only screen and (max-width: 1200px) {
     font-size: 18rem;
   }
 
   @media only screen and (max-width: 992px) {
     font-size: 15rem;
-  }
+  } */
 
   @media only screen and (max-width: 768px) {
     font-size: 11.5rem;
@@ -182,8 +186,8 @@ export const ServiceHeader = styled(motion.h3)`
   pointer-events: none;
   z-index: 99;
 
-  @media only screen and (max-width: 1350px) {
-    font-size: 9rem;
+  @media only screen and (max-width: 1400px) {
+    font-size: 8.5rem;
   }
 
   @media only screen and (max-width: 1200px) {

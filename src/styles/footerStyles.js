@@ -44,3 +44,29 @@ export const SocialLink = styled.a`
     color: ${(props) => props.theme.colorPrimary};
   }
 `
+
+export const LinkTree = styled.div`
+  width: 100%;
+  margin: 24px auto;
+  text-align: center;
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    margin-top: 164px;
+  }
+
+  a {
+    background-color: beige;
+    font-size: 1.4rem;
+    padding: 12px 32px;
+    border-radius: 100px;
+    color: #000;
+  }
+
+  a:active,
+  a:link,
+  a:visited {
+    color: #000;
+  }
+`

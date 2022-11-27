@@ -71,6 +71,8 @@ export const Cursor = styled(motion.div)`
 
   @media only screen and (max-width: 992px) {
     display: none;
+    opacity: 0;
+    backface-visibility: none;
   }
 
   &.hovered {

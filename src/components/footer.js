@@ -1,7 +1,12 @@
 import React from "react"
 
 // Styled components
-import { FooterSection, Socials, SocialLink } from "../styles/footerStyles"
+import {
+  FooterSection,
+  Socials,
+  SocialLink,
+  LinkTree,
+} from "../styles/footerStyles"
 import { Container, Flex } from "../styles/globalStyles"
 
 const SOCIAL_LINKS = [
@@ -29,26 +34,34 @@ const SOCIAL_LINKS = [
 
 const Footer = ({ onCursor, noMarginTop }) => {
   return (
-    <FooterSection noMarginTop={noMarginTop}>
-      <Container>
-        <Flex spaceBetween>
-          <p>© 2022, All rights reserved</p>
+    <>
+      <FooterSection noMarginTop={noMarginTop}>
+        <Container>
+          <Flex spaceBetween>
+            <p>© 2022, All rights reserved</p>
 
-          <Socials>
-            {SOCIAL_LINKS.map((social) => (
-              <SocialLink
-                onMouseEnter={() => onCursor("hovered")}
-                onMouseLeave={onCursor}
-                href={social.link}
-                target="_blank"
-              >
-                {social.title}
-              </SocialLink>
-            ))}
-          </Socials>
-        </Flex>
-      </Container>
-    </FooterSection>
+            <Socials>
+              {SOCIAL_LINKS.map((social) => (
+                <SocialLink
+                  onMouseEnter={() => onCursor("hovered")}
+                  onMouseLeave={onCursor}
+                  href={social.link}
+                  target="_blank"
+                >
+                  {social.title}
+                </SocialLink>
+              ))}
+            </Socials>
+          </Flex>
+        </Container>
+      </FooterSection>
+
+      <LinkTree>
+        <a href="https://linktr.ee/kushkarki" target="_blank">
+          Socials
+        </a>
+      </LinkTree>
+    </>
   )
 }
 
