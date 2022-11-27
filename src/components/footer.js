@@ -43,6 +43,7 @@ const Footer = ({ onCursor, noMarginTop }) => {
             <Socials>
               {SOCIAL_LINKS.map((social) => (
                 <SocialLink
+                  key={social.id}
                   onMouseEnter={() => onCursor("hovered")}
                   onMouseLeave={onCursor}
                   href={social.link}

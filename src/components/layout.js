@@ -54,8 +54,9 @@ body {
 }
 `
 
+const CURSOR_STYLES = ["pointer", "hovered", "expanded"]
+
 const Layout = ({ children }) => {
-  const { cursorStyles } = useGlobalStateContext()
   const dispatch = useGlobalDispatchContext()
 
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -69,7 +70,7 @@ const Layout = ({ children }) => {
   }
 
   const onCursor = (cursorType, cursorText = "") => {
-    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
+    cursorType = (CURSOR_STYLES.includes(cursorType) && cursorType) || false
 
     dispatch({ type: "CURSOR_TYPE", cursorType, cursorText })
   }

@@ -80,7 +80,7 @@ const HomeServices = () => {
         <span></span>
 
         {SERVICES.map((service) => (
-          <Services service={service} />
+          <Services key={service.id} service={service} />
         ))}
       </Container>
     </HomeServicesSection>

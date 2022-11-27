@@ -11,6 +11,7 @@ const globalReducer = (state, action) => {
       return {
         ...state,
         cursorType: action.cursorType,
+        cursorStyles: ["pointer", "hovered", "expanded"],
         cursorText: action.cursorText,
       }
     }
