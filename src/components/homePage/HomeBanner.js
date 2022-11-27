@@ -38,6 +38,7 @@ const HomeBanner = () => {
           muted
           src={require("../../assets/video/banner-video.mp4").default}
         ></video>
+        <img src={require("../../images/banner-image.jpg").default}></img>
       </Video>
       <BannerTitle>
         <Container>

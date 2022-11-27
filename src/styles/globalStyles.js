@@ -7,6 +7,10 @@ export const Container = styled(motion.div)`
   position: relative;
   width: 95%;
   height: 100%;
+
+  /* @media only screen and (max-width: 990px) {
+    width: 100%;
+  } */
 `
 
 export const Flex = styled.div`
@@ -64,6 +68,10 @@ export const Cursor = styled(motion.div)`
   justify-content: center;
 
   z-index: 999;
+
+  @media only screen and (max-width: 992px) {
+    display: none;
+  }
 
   &.hovered {
     width: 43px;

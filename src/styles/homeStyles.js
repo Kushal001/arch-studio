@@ -7,6 +7,10 @@ export const Banner = styled.div`
   position: relative;
   margin-bottom: 200px;
   color: ${(props) => props.theme.textWhite};
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 164px;
+  }
 `
 
 export const Video = styled(motion.div)`
@@ -14,8 +18,23 @@ export const Video = styled(motion.div)`
   width: 100%;
   overflow: hidden;
 
+  img {
+    display: none;
+
+    @media only screen and (max-width: 992px) {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+
   video {
     object-fit: cover;
+
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
   }
 `
 export const BannerTitle = styled(motion.h1)`
@@ -27,11 +46,35 @@ export const BannerTitle = styled(motion.h1)`
 
 export const Headline = styled(motion.div)`
   font-size: 20rem;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 18rem;
+  }
+
+  @media only screen and (max-width: 992px) {
+    font-size: 15rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 11.5rem;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 9.5rem;
+  }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 6.4rem;
+  }
 `
 
 // About section
 export const HomeAboutSection = styled(motion.div)`
   margin-bottom: 200px;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 164px;
+  }
 `
 
 export const About = styled.h4`
@@ -39,11 +82,35 @@ export const About = styled.h4`
   line-height: 167.8%;
   width: 800px;
   margin-left: 120px;
+
+  @media only screen and (max-width: 1200px) {
+    margin-left: 80px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    margin-left: 80px;
+    width: 80%;
+    font-size: 3.2rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-left: 64px;
+    font-size: 2.4rem;
+  }
+
+  @media only screen and (max-width: 576px) {
+    margin-left: 32px;
+    font-size: 1.8rem;
+  }
 `
 
 // Services section
 export const HomeServicesSection = styled(motion.div)`
   margin-bottom: 200px;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 164px;
+  }
 
   h4 {
     margin-left: 120px;
@@ -51,6 +118,22 @@ export const HomeServicesSection = styled(motion.div)`
     font-size: 1.6rem;
     text-transform: uppercase;
     color: ${(props) => props.theme.lightGray3};
+
+    @media only screen and (max-width: 1200px) {
+      margin-left: 80px;
+    }
+
+    @media only screen and (max-width: 992px) {
+      margin-left: 80px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-left: 64px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      margin-left: 32px;
+    }
   }
 
   span {
@@ -63,26 +146,69 @@ export const HomeServicesSection = styled(motion.div)`
 
 export const Service = styled.div`
   box-sizing: border-box;
-  /* margin: 64px 0; */
   height: 264px;
   overflow: hidden;
-
   display: flex;
   align-items: center;
-
   position: relative;
+
+  @media only screen and (max-width: 1200px) {
+    height: 230px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    height: 156px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: 132px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    height: 120px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    height: 100px;
+  }
 `
 
 export const ServiceHeader = styled(motion.h3)`
   overflow: hidden;
   margin: 0;
   margin-left: 120px;
-  /* height: 100%; */
   font-size: 9.6rem;
   text-transform: capitalize;
   pointer-events: none;
-
   z-index: 99;
+
+  @media only screen and (max-width: 1350px) {
+    font-size: 9rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 7.8rem;
+    margin-left: 80px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    font-size: 5.3rem;
+    margin-left: 80px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 4.5rem;
+    margin-left: 64px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 3.2rem;
+    margin-left: 32px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 2.8rem;
+  }
 `
 
 export const ServiceContent = styled.div`
@@ -102,6 +228,10 @@ export const ServiceVideo = styled.div`
 
   video {
     object-fit: cover;
+
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
   }
 
   div {
@@ -129,14 +259,35 @@ export const HomeFeaturedSection = styled(motion.div)`
   position: relative;
   overflow: hidden;
   margin-bottom: 200px;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 164px;
+  }
 `
 
 export const FeaturedVideo = styled.div`
   width: 100%;
   height: 100%;
 
+  img {
+    display: none;
+
+    @media only screen and (max-width: 992px) {
+      background-size: cover;
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      background-color: red;
+    }
+  }
+
   video {
     object-fit: cover;
+
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
   }
 `
 export const FeaturedContent = styled.div`
@@ -152,6 +303,22 @@ export const FeaturedContent = styled.div`
 
   h2 {
     font-size: 9rem;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 7.8rem;
+    }
+
+    @media only screen and (max-width: 992px) {
+      font-size: 5.3rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      font-size: 5rem;
+    }
+
+    @media only screen and (max-width: 576px) {
+      font-size: 3.2rem;
+    }
   }
 
   caption {
@@ -162,6 +329,15 @@ export const FeaturedContent = styled.div`
     width: 700px;
     line-height: 152.8%;
     font-size: 1.6rem;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1.4rem;
+      width: 80%;
+    }
+
+    /* @media only screen and (max-width: 576px) {
+      font-size: 3.2rem;
+    } */
   }
 `
 
@@ -179,6 +355,30 @@ export const Contact = styled.h2`
   font-size: 9.6rem;
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
+
+  @media only screen and (max-width: 1350px) {
+    font-size: 9rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 7.8rem;
+    margin-left: 80px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    font-size: 5.3rem;
+    margin-left: 80px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 4rem;
+    margin-left: 64px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 3.2rem;
+    margin-left: 32px;
+  }
 
   span {
     margin-top: 8px;

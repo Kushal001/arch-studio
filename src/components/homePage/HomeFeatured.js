@@ -14,7 +14,7 @@ const HomeFeatured = () => {
   const animation = useAnimation()
   const [featuredRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-300px",
+    rootMargin: "-200px",
   })
 
   useEffect(() => {
@@ -44,6 +44,8 @@ const HomeFeatured = () => {
       }}
     >
       <FeaturedVideo>
+        <img src={require("../../images/featured-img.jpg").default}></img>
+
         <video
           // width="100%"
           // height="100%"

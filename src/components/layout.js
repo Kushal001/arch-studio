@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 * {
   text-decoration: none;
   box-sizing: border-box;
-  /* cursor: none; */
+  /* border: 1px solid red; */
 }
 
 /* Fonts */

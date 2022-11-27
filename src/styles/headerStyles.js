@@ -16,6 +16,14 @@ export const HeaderNav = styled(motion.div)`
   p {
     text-transform: capitalize;
     color: ${(props) => props.theme.textWhite};
+
+    @media only screen and (max-width: 992px) {
+      font-size: 1.4rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
 `
 
@@ -24,6 +32,10 @@ export const Logo = styled.div`
     font-family: "semiBold";
     font-size: 1.8rem;
     color: ${(props) => props.theme.textWhite};
+
+    @media only screen and (max-width: 992px) {
+      font-size: 1.4rem;
+    }
   }
 `
 

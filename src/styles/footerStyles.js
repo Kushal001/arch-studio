@@ -10,6 +10,15 @@ export const FooterSection = styled.div`
     css`
       margin-top: 0;
     `}
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+    margin-top: 164px;
+  }
+
+  /* @media only screen and (max-width: 576px) {
+      font-size: 3.2rem;
+    } */
 `
 
 export const Socials = styled.div``
