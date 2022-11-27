@@ -9,15 +9,17 @@ import HomeFeatured from "../components/homePage/HomeFeatured"
 import HomeContact from "../components/homePage/HomeContact"
 
 // Global context
-import { useGlobalDispatchContext } from "../context/globalContext"
-
-const CURSOR_STYLES = ["pointer", "hovered", "expanded"]
+import {
+  useGlobalDispatchContext,
+  useGlobalStateContext,
+} from "../context/globalContext"
 
 const IndexPage = () => {
+  const { cursorStyles } = useGlobalStateContext()
   const dispatch = useGlobalDispatchContext()
 
   const onCursor = (cursorType, cursorText = "") => {
-    cursorType = (CURSOR_STYLES.includes(cursorType) && cursorType) || false
+    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
 
     dispatch({ type: "CURSOR_TYPE", cursorType, cursorText })
   }
